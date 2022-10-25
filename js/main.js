@@ -27,7 +27,8 @@
                 profs: ['Joe', 'John', 'Justin', 'Jarrod'],
                 remoteData: {},
                 username: '',
-                password: ''
+                password: '',
+                currentProf: {}
             }
         },
 
@@ -38,7 +39,13 @@
 
             sendFormData() {
                 console.log(this.username, this.password);
+            },
+
+            showMyData(data) {
+                console.table(data);
+                this.currentProf = data;
             }
+        
         }
 
     }).mount('#app')

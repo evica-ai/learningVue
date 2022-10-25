@@ -20,7 +20,7 @@
         
         <section v-for="prof in remoteData">
             <!-- <pre>{{ prof }}</pre> -->
-            <h1>{{ prof.name }}</h1>
+            <h1 @click="showMyData(prof)">{{ prof.name }}</h1>
             <h2>{{ prof.role }}</h2>
             <h3>{{ prof.role }}</h3>
 
@@ -35,6 +35,9 @@
             
         </section>
    
+        <section class="lightbox">
+            <pre>{{ currentProf }}</pre>
+        </section>
     </main>
 
     <!-- load third party libraries first before your javasvript -->
