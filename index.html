@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Learning Vue</title>
+</head>
+<body>
+    <main id="app"> <!-- Vue will attach itself to this container-->
+        <h1>{{ welcome }}</h1>
+        <h3>{{ name }}</h3>
+        <ul>
+            <li v-for="prof in profs">{{ prof }}</li>
+        </ul>
+        <button @click="logClick">Click Me!</button>
+        
+        <section v-for="prof in remoteData">
+            <!-- <pre>{{ prof }}</pre> -->
+            <h1>{{ prof.name }}</h1>
+            <h2>{{ prof.role }}</h2>
+            <h3>{{ prof.role }}</h3>
+
+            <img :src='"images/" + prof.avatar' :alt="prof.name">
+        </section>
+
+        <section> 
+            <!-- section class="form" @keyup.enter="sendFormData" if you happen upon an processing error or if you can utilize this for game movement or sumbit keys -->
+            <input v-model="username" type="text" placeholder="username">
+            <input v-model="password" type="password" placeholder="password">
+            <input @click="sendFormData" type="submit" value="go!">
+            
+        </section>
+   
+    </main>
+
+    <!-- load third party libraries first before your javasvript -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js" type="module" defer></script>
+</body>
+</html>
